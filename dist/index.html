@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하도급 공사대금 정산 안내 | 한빛세명건설(주)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f6f8fc;color:#202124;font-family:"Malgun Gothic","Apple SD Gothic Neo",Roboto,Arial,sans-serif;font-size:14px}
+.mi{width:24px;height:24px;fill:currentColor;flex:0 0 auto;display:block}
+
+/* ===== 상단 바 ===== */
+.gm-top{display:flex;align-items:center;gap:10px;height:60px;padding:0 16px;background:#f6f8fc}
+.gm-top .btn{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#444746;cursor:pointer}
+.gm-top .btn:hover{background:#e9edf3}
+.gm-logo{height:34px;width:auto}
+.gm-logo-txt{color:#5f6368;font-size:21px;letter-spacing:-.5px}
+.gm-search{flex:1;display:flex;align-items:center;gap:12px;max-width:720px;height:46px;margin:0 10px;padding:0 16px;border-radius:26px;background:#eaf1fb;color:#4a4f57}
+.gm-search:focus-within{background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.gm-search input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:15px;color:#202124;outline:none}
+.gm-search .mi{color:#5f6368;cursor:pointer}
+.gm-top-right{display:flex;align-items:center;gap:4px;margin-left:auto}
+.gm-ava-top{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#063a96;color:#ffc400;font:800 15px/1 Arial,sans-serif}
+
+/* ===== 본문 레이아웃 ===== */
+.gm-body{display:flex;align-items:flex-start;gap:0;padding:0 16px 20px}
+.gm-side{flex:0 0 256px;width:256px;padding:0 8px 0 0}
+.gm-compose{display:inline-flex;align-items:center;gap:14px;height:56px;margin:0 0 14px 8px;padding:0 26px 0 18px;border-radius:16px;background:#c2e7ff;color:#001d35;font-size:15px;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.14);cursor:pointer}
+.gm-compose:hover{box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.gm-nav{list-style:none;margin:0;padding:0}
+.gm-nav li{display:flex;align-items:center;gap:18px;height:38px;padding:0 14px 0 26px;border-radius:0 19px 19px 0;color:#1f1f1f;font-size:14px;cursor:pointer}
+.gm-nav li .mi{width:20px;height:20px;color:#444746}
+.gm-nav li .cnt{margin-left:auto;font-size:12px;font-weight:700;color:#444746}
+.gm-nav li:hover{background:#e3e8ef}
+.gm-nav li.on{background:#d3e3fd;color:#041e49;font-weight:700}
+.gm-nav li.on .mi{color:#041e49}
+.gm-nav li.on .cnt{color:#041e49}
+.gm-labels{margin-top:14px}
+.gm-labels-h{display:flex;align-items:center;justify-content:space-between;height:36px;padding:0 10px 0 26px;color:#444746;font-size:14px;font-weight:600}
+.gm-labels-h .mi{width:18px;height:18px;cursor:pointer}
+.gm-nav li .dot{width:13px;height:13px;border-radius:3px;flex:0 0 auto}
+
+/* ===== 메일 열람 패널 ===== */
+.gm-main{flex:1;min-width:0;border-radius:16px;background:#fff;overflow:hidden}
+.gm-tools{display:flex;align-items:center;gap:2px;padding:7px 14px;color:#444746}
+.gm-tools .btn{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;cursor:pointer}
+.gm-tools .btn:hover{background:#f1f3f6}
+.gm-tools .sep{width:1px;height:22px;margin:0 6px;background:#e0e3e8}
+.gm-count{margin-left:auto;color:#5f6368;font-size:13px;white-space:nowrap}
+.gm-pager{display:flex;gap:2px}
+
+.gm-read{padding:6px 32px 30px}
+.gm-subj{display:flex;align-items:center;gap:12px;margin:10px 0 18px}
+.gm-subj h1{margin:0;font-size:26px;font-weight:400;color:#202124;line-height:1.3}
+.gm-chip{display:inline-flex;align-items:center;gap:6px;padding:3px 8px 3px 10px;border-radius:5px;background:#ddd;color:#333;font-size:12px}
+.gm-chip .mi{width:14px;height:14px;color:#5f6368;cursor:pointer}
+
+.gm-sender{display:flex;align-items:flex-start;gap:14px;margin-bottom:8px}
+.gm-ava{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:#063a96;color:#ffc400;font:800 16px/1 Arial,sans-serif}
+.gm-sdetail{flex:1;min-width:0}
+.gm-srow1{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.gm-sname{font-size:14px;font-weight:700;color:#202124}
+.gm-saddr{color:#5f6368;font-size:13px}
+.gm-sdate{margin-left:auto;color:#5f6368;font-size:13px;white-space:nowrap}
+.gm-sact{display:flex;gap:2px;color:#5f6368}
+.gm-sact .mi{width:20px;height:20px;cursor:pointer}
+.gm-srow2{display:flex;align-items:center;gap:3px;color:#5f6368;font-size:13px;margin-top:1px}
+.gm-srow2 .mi{width:16px;height:16px}
+
+/* ===== 메일 본문 ===== */
+.mail-content{margin-top:18px;font-size:19px;line-height:1.43;letter-spacing:-.04em;color:#101010}
+.banner{position:relative;overflow:hidden;height:112px;border-radius:7px;background:linear-gradient(95deg,#f6f6f5 28%,#aeddf7 65%,#77c1f3)}
+.construction{position:absolute;right:0;top:0;height:100%;width:auto;mask-image:linear-gradient(to right,transparent,#000 16%)}
+.logo{position:absolute;top:4px;left:23px;width:390px;max-width:75%;height:auto}
+.waves{position:absolute;bottom:0;left:0;width:min(76%,870px);height:40px}
+article{padding:14px 2px 0}
+.mail-content p{margin:0 0 7px}
+.mail-content strong,.highlight{color:#0909ae;font-weight:800}
+.highlight{margin:11px 0 12px;padding:5px 30px 7px;border:1px solid #9cb9ff;background:#e5ecfc;border-radius:8px;font-size:20px}
+.action{display:flex;justify-content:center;margin:16px 0 12px}
+.notice-button{display:grid;place-items:center;width:min(100%,465px);min-height:55px;border:2px solid #ffcb00;border-radius:11px;color:#fff;background:#073580;font-size:23px;font-weight:800;padding:6px 12px;text-align:center;text-decoration:none}
+.notice-button:hover{background:#104494}
+.notice-button:focus-visible{outline:3px solid #507be5;outline-offset:3px}
+.mail-content footer{position:relative;border-top:2px solid #d7e2fc;margin:15px 0 0 5px;padding:4px 8px 0 30px}
+.mail-content footer::before{content:"";position:absolute;left:0;top:9px;bottom:1px;width:5px;border-radius:4px;background:#100bb8}
+.mail-content footer strong{font-size:22px}
+.contacts{display:flex;gap:30px;flex-wrap:wrap;align-items:center}
+.contacts span+span{border-left:2px solid;padding-left:32px;line-height:1}
+.contacts span:first-child{min-width:320px;font-weight:700}
+.english{display:block;color:#404656;font:18px/1.45 Arial,sans-serif;letter-spacing:0}
+
+@media(max-width:960px){
+.gm-side{display:none}
+.gm-body{padding-inline:12px}
+}
+@media(max-width:650px){
+.gm-top{height:54px;padding:0 8px;gap:4px}
+.gm-top .btn{width:40px;height:40px}
+.gm-logo-txt{display:none}
+.gm-search{height:42px;margin:0 4px}
+.gm-read{padding:4px 14px 24px}
+.gm-subj h1{font-size:20px}
+.mail-content{font-size:16px;letter-spacing:-.03em}
+.banner{height:92px}
+.logo{left:9px;top:7px;max-width:71%}
+.construction{right:-38px;opacity:.78}
+.waves{width:85%;height:25px}
+.highlight{padding:7px 12px;font-size:17px}
+.notice-button{font-size:19px}
+.mail-content footer{padding-left:17px}
+.contacts{column-gap:14px;row-gap:5px}
+.contacts span:first-child{min-width:100%}
+.contacts span+span{border:0;padding:0;line-height:1.4}
+}
+</style>
+</head>
+<body>
+
+<header class="gm-top">
+  <div class="btn" aria-label="메뉴"><svg class="mi" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></div>
+  <svg class="gm-logo" viewBox="0 0 49 37" aria-label="Gmail">
+    <path fill="#4285f4" d="M3.3 36.5h7.6V18L0 9.8v23.4c0 1.8 1.5 3.3 3.3 3.3z"/>
+    <path fill="#34a853" d="M38.1 36.5h7.6c1.8 0 3.3-1.5 3.3-3.3V9.8L38.1 18z"/>
+    <path fill="#fbbc04" d="M38.1 3.8V18L49 9.8V5.5c0-4-4.6-6.3-7.8-3.9z"/>
+    <path fill="#ea4335" d="M10.9 18V3.8l13.6 10.2L38.1 3.8V18L24.5 28.2z"/>
+    <path fill="#c5221f" d="M0 5.5v4.3L10.9 18V3.8L7.8 1.5C4.6-.9 0 1.5 0 5.5z"/>
+  </svg>
+  <span class="gm-logo-txt">Gmail</span>
+  <div class="gm-search">
+    <svg class="mi" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/></svg>
+    <input type="text" placeholder="메일 검색" aria-label="메일 검색">
+    <svg class="mi" viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg>
+  </div>
+  <div class="gm-top-right">
+    <div class="btn" aria-label="지원"><svg class="mi" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg></div>
+    <div class="btn" aria-label="설정"><svg class="mi" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5zm7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65A.49.49 0 0 0 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.65.07.97l-2.11 1.66c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></div>
+    <div class="btn" aria-label="Google 앱"><svg class="mi" viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg></div>
+    <div class="gm-ava-top">N</div>
+  </div>
+</header>
+
+<div class="gm-body">
+  <aside class="gm-side">
+    <div class="gm-compose">
+      <svg class="mi" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+      편지쓰기
+    </div>
+    <ul class="gm-nav">
+      <li class="on"><svg class="mi" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H4.99V5H19v10z"/></svg>받은편지함<span class="cnt">23</span></li>
+      <li><svg class="mi" viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg>별표편지함</li>
+      <li><svg class="mi" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>다시 알림 항목</li>
+      <li><svg class="mi" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>보낸편지함</li>
+      <li><svg class="mi" viewBox="0 0 24 24"><path d="M21.99 8c0-.72-.37-1.35-.94-1.7L12 1 2.95 6.3C2.38 6.65 2 7.28 2 8v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2l-.01-10zM12 13L3.74 7.84 12 3l8.26 4.84L12 13z"/></svg>임시보관함</li>
+      <li><svg class="mi" viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>더보기</li>
+    </ul>
+    <div class="gm-labels">
+      <div class="gm-labels-h">라벨<svg class="mi" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+      <ul class="gm-nav">
+        <li><span class="dot" style="background:#4285f4"></span>업무</li>
+        <li><span class="dot" style="background:#34a853"></span>거래처</li>
+        <li><span class="dot" style="background:#f9ab00"></span>정산/회계</li>
+        <li><span class="dot" style="background:#a142f4"></span>기타</li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="gm-main">
+    <div class="gm-tools">
+      <div class="btn" aria-label="뒤로"><svg class="mi" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></div>
+      <span class="sep"></span>
+      <div class="btn" aria-label="보관"><svg class="mi" viewBox="0 0 24 24"><path d="M20.54 5.23l-1.39-1.68A1.45 1.45 0 0 0 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.82-1h12l.93 1H5.12z"/></svg></div>
+      <div class="btn" aria-label="스팸 신고"><svg class="mi" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+      <div class="btn" aria-label="삭제"><svg class="mi" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+      <span class="sep"></span>
+      <div class="btn" aria-label="읽지 않음으로 표시"><svg class="mi" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+      <div class="btn" aria-label="다시 알림"><svg class="mi" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+      <div class="btn" aria-label="할 일에 추가"><svg class="mi" viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm0 16H5V5h14v14zm-6-2h-2v-3H8v-2h3V9h2v3h3v2h-3z"/></svg></div>
+      <div class="btn" aria-label="라벨"><svg class="mi" viewBox="0 0 24 24"><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/></svg></div>
+      <div class="btn" aria-label="더보기"><svg class="mi" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></div>
+      <span class="gm-count">1개 중 1개</span>
+      <div class="gm-pager">
+        <div class="btn" aria-label="이전"><svg class="mi" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></div>
+        <div class="btn" aria-label="다음"><svg class="mi" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></div>
+      </div>
+    </div>
+
+    <div class="gm-read">
+      <div class="gm-subj">
+        <h1>[한빛세명건설(주)] 하도급 공사대금 수령계좌 변경 안내</h1>
+        <span class="gm-chip">받은편지함<svg class="mi" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></span>
+      </div>
+      <div class="gm-sender">
+        <div class="gm-ava" aria-hidden="true">HS</div>
+        <div class="gm-sdetail">
+          <div class="gm-srow1">
+            <span class="gm-sname">한빛세명건설(주) 경영지원팀</span>
+            <span class="gm-saddr">&lt;managementsupport@hanbitsemyeong.com&gt;</span>
+            <span class="gm-sdate">YYYY.MM.DD. 10:24</span>
+            <span class="gm-sact">
+              <svg class="mi" viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg>
+              <svg class="mi" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>
+              <svg class="mi" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            </span>
+          </div>
+          <div class="gm-srow2">나에게<svg class="mi" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+        </div>
+      </div>
+
+      <div class="mail-content">
+        <header class="banner">
+          <img class="construction" src="./construction.png" alt="">
+          <img class="logo" src="./logo.svg" alt="HS 한빛세명건설(주) HANBIT SEMYEONG CONSTRUCTION">
+          <svg class="waves" viewBox="0 0 870 40" preserveAspectRatio="none" aria-hidden="true">
+            <path fill="#ffc400" d="M0 34C91 7 148 37 247 34c118-3 204-48 365-30 103 10 166 30 188 35H209C117 28 82 13 0 35Z"/>
+            <path fill="#063a96" d="M328 39C419 20 498 6 604 12c87 4 150 16 192 27Z"/>
+          </svg>
+        </header>
+        <article>
+          <p>안녕하세요.<br>한빛세명건설(주) 경영지원팀입니다.</p>
+          <p>귀사의 무궁한 발전을 기원합니다.</p>
+          <p>현재 진행 중인 <strong>세온지구 B-2블록 공동주택 신축공사</strong>의 하도급 공사대금 정산과 관련하여, 당사 내부 정산 절차 변경에 따른 수령계좌 변경 사항을 안내드립니다.</p>
+          <p class="highlight">적용 대상: YYYY.MM.DD. 지급 예정인 하도급 공사대금</p>
+          <p>변경 전·후 은행명 및 계좌정보와 적용일은 아래 온라인 통지서에서 확인하실 수 있습니다.</p>
+          <br>
+          <div class="action"><a class="notice-button" href="./notice.hanbitsemyeong.html">[수령계좌 변경 통지서 확인]</a></div>
+          <br>
+          <br>
+          <p>이번 회차 하도급 공사대금 정산 마감일은 <strong>YYYY.MM.DD. 17시</strong>입니다.<br>계좌 변경과 관련한 세부 사항은 통지서에 기재되어 있습니다.</p>
+          <p>업무 협조에 감사드립니다.</p>
+        </article>
+        <br>
+        <footer>
+          <strong>한빛세명건설(주)</strong>
+          <div class="contacts"><span>경영지원팀 | 공사대금 정산 담당</span><span>TEL. 02-1587-1780</span><span>FAX. 02-1587-1781</span></div>
+          <span class="english" lang="en">Management Support Team</span>
+        </footer>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하도급 공사대금 수령계좌 변경 통지서 시안</title>
+<style>
+* { box-sizing: border-box }
+body {
+  margin: 0;
+  background: #fdfdfd;
+  color: #101010;
+  font: 1.0625rem/1.48 "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  letter-spacing: -.035em;
+}
+.page { max-width: 1090px; margin: auto; padding: 12px 20px 18px }
+.banner {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+  background: linear-gradient(96deg, #f7f7f7 27%, #bbe7fb 75%, #81c8f1);
+}
+.construction { position: absolute; right: 0; height: 100%; mask-image: linear-gradient(to right, transparent, #000 25%) }
+.logo { position: absolute; left: 18px; top: 3px; width: min(280px, 66%) }
+.waves { position: absolute; bottom: 0; width: min(82%, 850px); height: 32px }
+h1, h2 { color: #082358; line-height: 1.25 }
+h1 { margin: 10px 0 4px; font-size: clamp(1.5rem, 3.1vw, 2.125rem); text-align: center }
+.sample { margin: 0 0 8px; color: #264e82; font-size: .9rem; font-weight: 700; text-align: center }
+.metadata {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 24px;
+  margin: 0;
+  padding: 6px clamp(8px, 4%, 36px);
+  border-block: 1px solid #9ab0d0;
+  border-top: 2px solid #142b85;
+  line-height: 1.38;
+}
+dt { font-weight: 700 }
+dd { margin: 0 }
+.points { margin: 7px 0; padding-left: 3rem }
+.points li + li { margin-top: 2px }
+strong { color: #071c87 }
+.table-heading { margin: 3px 0 6px; text-align: center; font-weight: 700; letter-spacing: .28em }
+table { width: 100%; border-collapse: collapse; text-align: center }
+table :is(th, td) { border: 1px solid #6883ad; padding: 2px 6px; overflow-wrap: anywhere }
+thead { background: #c8ddf7; color: #071b44 }
+thead th:first-child, tbody th { width: 22% }
+tbody th { background: #e8eff6 }
+.summary { margin: 15px 0 8px; padding: 5px 12px 6px 3.9rem; border-radius: 7px; background: #e5effb; list-style: square }
+.summary li::marker { color: #0b3783 }
+.signature { padding-bottom: 12px; border-bottom: 1px solid #43679f; text-align: center }
+.signature p { margin: 0 }
+.company { display: flex; justify-content: center; align-items: center; gap: 12px; min-height: 68px; font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 800 }
+.stamp {
+  display: grid;
+  place-items: center;
+  width: 57px;
+  height: 57px;
+  border: 4px double currentColor;
+  border-radius: 5px;
+  color: #b32025;
+  font-size: 1.1rem;
+  letter-spacing: .12em;
+}
+.confirmation { margin-top: 15px; padding: 8px 12px 14px; border-radius: 9px; background: #e8eff7; text-align: center }
+.confirmation h2 { margin: 0 0 7px; font-size: 1.45rem }
+.confirmation label { display: flex; justify-content: center; align-items: center; gap: 10px }
+.confirmation input { width: 20px; height: 20px; flex: 0 0 auto; accent-color: #06347b }
+.confirmation button {
+  display: block;
+  width: min(100%, 272px);
+  min-height: 44px;
+  margin: 11px auto 0;
+  border: 0;
+  border-radius: 8px;
+  background: #06347b;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.confirmation button:hover { background: #104494 }
+.confirmation :focus-visible { outline: 3px solid #507be5; outline-offset: 3px }
+@media (max-width: 600px) {
+  body { font-size: 1rem }
+  .page { padding-inline: 12px }
+  .banner { height: 70px }
+  .logo { left: 7px }
+  .construction { opacity: .72 }
+  .metadata { column-gap: 14px }
+  .points { padding-left: 1.7rem }
+  .summary { padding-left: 2rem }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="banner">
+    <img class="construction" src="./construction.png" alt="">
+    <img class="logo" src="./logo.svg" alt="HS 한빛세명건설(주)">
+    <svg class="waves" viewBox="0 0 870 40" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#ffc400" d="M0 34C91 7 148 37 247 34c118-3 204-48 365-30 103 10 166 30 188 35H209C117 28 82 13 0 35Z"/>
+      <path fill="#063a96" d="M328 39C419 20 498 6 604 12c87 4 150 16 192 27Z"/>
+    </svg>
+  </header>
+  <article aria-labelledby="notice-title">
+    <h1 id="notice-title">하도급 공사대금 수령계좌 변경 통지서</h1>
+    <p class="sample">디자인 시안 · 예시 정보</p>
+    <dl class="metadata">
+      <dt>문서번호</dt><dd>HSM-YYYYMMDD-01</dd>
+      <dt>시행일자</dt><dd>YYYY.MM.DD</dd>
+      <dt>수신</dt><dd>협력사 공사대금 정산 담당자 귀하</dd>
+      <dt>참조</dt><dd>자금 및 정산 담당 부서</dd>
+      <dt>제목</dt><dd>하도급 공사대금 수령계좌 변경 안내</dd>
+    </dl>
+    <br>
+    <br>
+    <ol class="points">
+      <li>귀사의 무궁한 발전을 기원합니다.</li>
+      <li>당사 내부 정산 절차 변경에 따라 <strong>세온지구 B-2블록 공동주택 신축공사</strong>의 하도급 공사대금 수령계좌가 변경되었음을 알려드립니다.</li>
+      <li>변경 전·후 수령계좌 및 적용 대상은 아래와 같습니다.</li>
+    </ol>
+    <br>
+    <p class="table-heading" aria-hidden="true">- 아 래 -</p>
+    <br>
+    <table aria-label="수령계좌 변경 전후 예시">
+      <thead>
+        <tr><th scope="col">구분</th><th scope="col">변경 전</th><th scope="col">변경 후</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">은행명</th><td>세온은행</td><td><B>가온은행</B></td></tr>
+        <tr><th scope="row">계좌번호</th><td>483-7261-9508-314</td><td><B>618-2745-9038-164</B></td></tr>
+        <tr><th scope="row">예금주</th><td>한빛세명건설(주)</td><td><B>한빛세명건설(주)</B></td></tr>
+      </tbody>
+    </table>
+    <ul class="summary">
+      <li><strong>적용 대상</strong>　YYYY.MM.DD 지급 예정인 하도급 공사대금</li>
+      <li><strong>정산 마감일</strong>　YYYY.MM.DD 17시</li>
+    </ul>
+    <br>
+    <ol class="points" start="4">
+      <li>상기 지급분에 관한 수령계좌 변경 사항 및 적용 일정은 위와 같습니다.<br>업무 협조에 감사드립니다.</li>
+    </ol>
+    <footer class="signature">
+      <br>
+      <p>YYYY.MM.DD</p>
+      <p class="company">한빛세명건설(주) <span class=""></span><img src="./stamp_crop.png" alt=""></p>
+      <br>
+      <p>경영지원팀 | 공사대금 정산 담당</p>
+      <p>TEL. 02-1587-1780　|　FAX. 02-1587-1781</p>
+    </footer>
+  </article>
+  <section class="confirmation" aria-labelledby="confirmation-title">
+    <h2 id="confirmation-title">계좌 변경 통지서 확인</h2>
+    <form action="./training.html">
+      <label><input type="checkbox" required>계좌 변경 통지서 내용을 확인하였습니다.</label>
+      <button type="submit">확인 완료</button>
+    </form>
+  </section>
+</main>
+</body>
+</html>
